@@ -1,0 +1,49 @@
+﻿<Window x:Class="WatchWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WatchWPF"
+        mc:Ignorable="d"
+        Title="Watch" Height="350" Width="525">
+    <Viewbox>
+        <Canvas Width="200" Height="200">
+            <Canvas.RenderTransform>
+                <TranslateTransform X="100" Y="100"/>
+            </Canvas.RenderTransform>
+            <Path Fill="Transparent" Stroke="Black" StrokeThickness="3"
+                  StrokeDashArray="0 3.14159" StrokeDashCap="Round">
+                <Path.Data>
+                    <EllipseGeometry RadiusX="90" RadiusY="90"/>
+                </Path.Data>
+            </Path>
+            <Path Fill="Transparent" Stroke="Black" StrokeThickness="6"
+                  StrokeDashArray="0 7.85398" StrokeDashCap="Round">
+                <Path.Data>
+                    <EllipseGeometry RadiusX="90" RadiusY="90"/>
+                </Path.Data>
+            </Path>
+            <!--Secunds-->
+            <Path Data="M 0 10 L 0 -80" StrokeEndLineCap="Round" Stroke="Black" StrokeThickness="2">
+                <Path.RenderTransform>
+                    <RotateTransform x:Name="rotateSecond"/>
+                </Path.RenderTransform>
+            </Path>
+            <!--Minutes-->
+            <Path Data="M 0 -80 L 2.5 -60 0 0 -2.55 -60 0 -80" StrokeEndLineCap="Round"
+                    Stroke="Black" StrokeThickness="2" Fill="Blue">
+                <Path.RenderTransform>
+                    <RotateTransform x:Name="rotateMinute"/>
+                </Path.RenderTransform>
+            </Path>
+            <!--Hours-->
+            <Path Data="M 0 -70 L 5 -50 L 0 0 L -5 -50 L 0 -70" StrokeEndLineCap="Round"
+                    Stroke="Black" StrokeThickness="2" Fill="Blue">
+                <Path.RenderTransform>
+                    <RotateTransform x:Name="rotateHour"/>
+                </Path.RenderTransform>
+            </Path>
+        </Canvas>
+
+    </Viewbox>
+</Window>
